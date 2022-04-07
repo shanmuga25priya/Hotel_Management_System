@@ -1,0 +1,77 @@
+﻿@model Hotel_Management_System.Models.InventoryReports
+@{
+    ViewBag.Title = "calculate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/InventoryReports.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+</html>
+
+
+<h1>calculate</h1>
+
+<html>
+<head>
+    <body>
+        <h2> Inventory Reports </h2>
+
+        <div class="row">
+            @using (Html.BeginForm("/calculate", "InventoryReports", FormMethod.Post))
+            {
+                <h3>
+                <div class="form-group">
+                    <label for="TotalIncome">TotalIncome</label>
+                    <input type="text" class="form-control" id="TotalIncome" name="TotalIncome" value="@Model.TotalIncome" />
+                </div>
+                <div class="form-group">
+                    <label for="MaintainanceCost">MaintainanceCost</label>
+                    <input type="text" class="form-control" id="MaintainanceCost" name="MaintainanceCost" value="@Model.MaintainanceCost" />
+                </div>
+
+                <div class="form-group">
+                    <label for="EmployeeSalary">EmployeeSalary </label>
+                    <input type="text" class="form-control" id="EmployeeSalary" name="EmployeeSalary" value="@Model.EmployeeSalary" />
+                </div>
+
+                <div class="form-group">
+                    <label for="TotalProfit">TotalProfit</label>
+                    <input type="text" class="form-control" id="TotalProfit" name="TotalProfit" value="@Model.TotalProfit" />
+                </div>
+                <button type="submit" class="btn-btn-info" id="calculate" value="calculate">Calculate</button>
+                </h3>
+            }
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </body>
+</head>
+</html>

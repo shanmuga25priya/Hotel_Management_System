@@ -1,0 +1,92 @@
+﻿@model Hotel_Management_System.Models.SetRates
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Setrate.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+</html>
+
+
+
+
+
+
+<h2>Details</h2>
+
+<div>
+    <h4>SetRates</h4>
+    <hr />
+    <h4>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfGuests)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfGuests)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Day)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Day)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OneNightPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OneNightPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Extention)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Extention)
+            </dd>
+
+        </dl>
+    </h4>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SetRateId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

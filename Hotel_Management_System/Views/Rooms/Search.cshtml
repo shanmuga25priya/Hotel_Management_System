@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.Rooms>
+@{
+    ViewBag.Title = "Search";
+
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Rooms.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+</head>
+</html>
+
+
+<h2 style="color:white">Search</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Title: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+}
+<h4>
+    <table class="table" style="color:white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOccupied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </th>
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.IsOccupied)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckOut)
+                </td>
+            </tr>
+        }
+
+    </table>
+</h4>

@@ -1,0 +1,105 @@
+﻿
+@model Hotel_Management_System.Models.Guest
+
+@{
+    ViewBag.Title = "SendEmail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Guest.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+</head>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title style="color: #efc62b">SendEmail</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("SendEmail", "Guests", FormMethod.Post, new { enctype = "multipart/from-data" }))
+        {
+            <a style="color: #efc62b">
+
+
+                <canvas id="myCanvas"></canvas>
+                <h1> Hotel Management System</h1>
+
+                <table>
+                    <h1><b>
+                    <tr>
+                        <td style=" 80px">
+                            to:
+                        </td>
+                        <td>@Html.TextBoxFor(mode1 => mode1.Email)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Subject:
+                        </td>
+                        <td>@Html.TextBoxFor(mode1 => mode1.Subject)</td>
+                    </tr>
+                    <tr>
+                        <td valign=" top">
+                            Body:
+                        </td>
+                        <td>@Html.TextAreaFor(mode1 => mode1.Body, new { row = "15", cols = "25" })</td>
+                    </tr>
+                    </b>
+                    </h1>
+                    <tr>
+                        <td>
+                            @*<input type="submit" value="Send" name="SendEmail" />*@
+                            <input type="submit" value="Send" class="btn btn-default" onclick="return click_here_to_save();" />
+                            <script type="text/javascript">function click_here_to_save() { alert('Mail Sended '); }</script>
+                        <td>
+                    <tr>
+
+                        <table>
+                            <br />
+                            <span style="color:green">@ViewBag.message</span>
+
+</a>
+
+        }
+    </div>
+    <div>
+        <h3> @Html.ActionLink("Back to List", "Index")</h3>
+    </div>
+</body>
+</html>

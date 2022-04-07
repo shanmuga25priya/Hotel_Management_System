@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.SetRates>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Setrate.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+</head>
+</html>
+
+
+
+<h2>SetRates</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h4>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfGuests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OneNightPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extention)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfGuests)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OneNightPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Extention)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SetRateId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SetRateId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SetRateId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</h4>

@@ -1,0 +1,117 @@
+﻿@model Hotel_Management_System.Models.Issuebill
+
+@{
+    ViewBag.Title = "addbill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/issuebills.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Create</h2>
+
+<html>
+<head>
+    <body>
+        <h2> Add Bills  </h2>
+        <h3>
+            <div class="row">
+                @using (Html.BeginForm("/addbill", "Issuebills", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label for="RoomNo">Room No</label>
+                        <input type="text" class="form-control" id="RoomNo" name="RoomNo" value="@Model.RoomNo" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="BillNo">Bill No </label>
+                        <input type="text" class="form-control" id="BillNo" name="BillNo" value="@Model.BillNo" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Quantity">Quantity</label>
+                        <input type="text" class="form-control" id="Quantity" name="Quantity" value="@Model.Quantity" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Price">Price</label>
+                        <input type="text" class="form-control" id="Price" name="Price" value="@Model.Price" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Taxes">Taxes</label>
+                        <input type="text" class="form-control" id="Taxes" name="Taxes" value="@Model.Taxes" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input type="datetime-local" class="form-control" id="Date" name="Date" value="@Model.Date" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Services">Services</label>
+                        <input type="text" class="form-control" id="Services" name="Services" value="@Model.Services" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Total">Total</label>
+                        <input type="text" class="form-control" id="Total" name="Total" value="@Model.Total" />
+                    </div>
+
+                    @* <button type="submit" class="btn-btn-info" id="add" value="add">calculate</button>*@
+                    <input type="submit" value="Create" class="btn btn-default" onclick="return click_here_to_save();" />
+                    <script type="text/javascript">function click_here_to_save() { alert('Data Created successfully '); }</script>
+                }
+            </div>
+        </h3>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </body>
+</head>
+</html>

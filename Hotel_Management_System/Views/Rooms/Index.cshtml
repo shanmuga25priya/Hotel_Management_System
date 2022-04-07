@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.Rooms>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Rooms.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+</html>
+
+<h1 style="color:white">Rooms</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+    <p>
+        Status: @Html.TextBox("SearchString") <input type="submit" value="Filter" />
+
+    </p>
+}
+    </p>
+
+<h4>
+
+    <table class="table" style="color:white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOccupied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </th>
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.IsOccupied)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckOut)
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RoomNumber }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RoomNumber }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RoomNumber })|
+                    <a href="https://localhost:44376/Reservations/Create"><input type="submit" value="Register" name="register"></a>
+                </td>
+
+            </tr>
+        }
+
+
+
+    </table>
+</h4>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+

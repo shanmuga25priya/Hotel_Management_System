@@ -1,0 +1,122 @@
+﻿@model Hotel_Management_System.Models.Guest
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Guest.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+</html>
+
+
+
+<h2 style="color: #efc62b">Delete</h2>
+
+<h3 style="color: #efc62b">Are you sure you want to delete this?</h3>
+<div>
+
+    <hr />
+    <h3>
+        <dl class="dl-horizontal" style="color: #efc62b">
+            <dt>
+                @Html.DisplayNameFor(model => model.RoomNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RoomNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Company)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Company)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    </h3>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @* <input type="submit" value="Delete" class="btn btn-default" /> |*@
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return click_here_to_save();" />
+            <script type="text/javascript">function click_here_to_save() { alert('Data Deleted successfully '); }</script>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

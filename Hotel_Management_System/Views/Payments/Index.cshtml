@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/pay1.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+</head>
+
+
+
+<h2>Payments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h4>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditCardDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayTime)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditCardDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PayTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RoomId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RoomId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RoomId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</h4>

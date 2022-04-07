@@ -1,0 +1,111 @@
+﻿@model Hotel_Management_System.Models.Rooms
+@{
+    ViewBag.Title = "Details";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/Rooms.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+</html>
+
+<h2 style="color:white">Details</h2>
+
+
+
+<div>
+    <h4 style="color:white">SearchRooms</h4>
+    <hr />
+    <h4>
+        <dl class="dl-horizontal" style="color:white">
+            <dt>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </dt>
+
+
+
+            <dd>
+                @Html.DisplayFor(model => model.RoomType)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsOccupied)
+            </dt>
+
+
+
+            <dd>
+                @Html.DisplayFor(model => model.IsOccupied)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RoomCost)
+            </dt>
+
+
+
+            <dd>
+                @Html.DisplayFor(model => model.RoomCost)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </dt>
+
+
+
+            <dd>
+                @Html.DisplayFor(model => model.CheckIn)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </dt>
+
+
+
+            <dd>
+                @Html.DisplayFor(model => model.CheckOut)
+            </dd>
+
+
+
+        </dl>
+    </h4>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

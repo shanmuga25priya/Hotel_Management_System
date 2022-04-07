@@ -1,0 +1,108 @@
+﻿@model Hotel_Management_System.Models.Reservation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .logo-w3 {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: blanchedalmond;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+
+        body {
+            background-repeat: no-repeat;
+            background-image: url('../../Images/reserv.png');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+</html>
+
+
+
+
+
+<h2 style="color:white">Details</h2>
+
+<div>
+    <h4 style="color:white">Reservation</h4>
+    <hr />
+    <h4>
+        <dl class="dl-horizontal" style="color:white">
+            <dt>
+                @Html.DisplayNameFor(model => model.RoomNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RoomNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfChildren)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfChildren)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfAdults)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfAdults)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CheckIn)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CheckOut)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfNights)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfNights)
+            </dd>
+
+        </dl>
+    </h4>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReservationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
